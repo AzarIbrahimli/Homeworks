@@ -16,7 +16,6 @@ public class ShootingAtTheSquare {
             for (String[] strings : array) {          // this loop initialize table
                 Arrays.fill(strings, " - |");
             }
-
             for (int k = 0; k < 6; k++) {    // numerization for table between 0-5
                 System.out.printf("%d | ", k);
             }
