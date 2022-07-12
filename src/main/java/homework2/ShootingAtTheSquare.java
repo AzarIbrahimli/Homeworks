@@ -11,7 +11,6 @@ public class ShootingAtTheSquare {
             Random RandomNumber = new Random();
             int rand_int1 = RandomNumber.nextInt(1, 5);
             int rand_int2 = RandomNumber.nextInt(1, 5);
-            System.out.println("All set. Get ready to rumble!");
             int horizontal = 0; //string to integer
             for (String[] strings : array) {          // this loop initialize table
                 Arrays.fill(strings, " - |");
@@ -28,6 +27,7 @@ public class ShootingAtTheSquare {
                 }
                 System.out.println();
             }
+            System.out.println("\nAll set. Get ready to rumble!");
             do {
                 do {                        // this loop checks line is number or not.And is between (1-5) ?
                     System.out.println("Enter a line for fire, please : ");
