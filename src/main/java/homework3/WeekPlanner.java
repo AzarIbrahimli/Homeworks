@@ -26,11 +26,10 @@ public class WeekPlanner {
             String weekday = sc.next();
             String lower = weekday.toLowerCase();
             String space = lower.trim();
-            if(space.equals("exit")) {
-                a=false;
-            }
-            else{
                 switch (space) {
+                    case "exit":
+                        a=false;
+                        break;
                     case "sunday":
                         System.out.println(scedule[0][1]);
                         break;
@@ -56,7 +55,6 @@ public class WeekPlanner {
                         System.out.println("Sorry, I don't understand you, please try again.");
                         break;
                 }
-            }
-        }while(a);
+            }while(a);
+        }
     }
-}
