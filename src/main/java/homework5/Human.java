@@ -59,9 +59,10 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", year=" + dateOfBirth +
                 ", iq=" + iqLevel +
-                ", schedule=" + Arrays.toString(getSchedule())+
+                ", schedule=" + Arrays.deepToString(getSchedule()) +
                 '}';
     }
+
 
 
 //    public void greetPet() {
@@ -94,4 +95,6 @@ public class Human {
 
     public Human() {
     }
-}
+
+    }
+

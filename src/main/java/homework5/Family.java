@@ -56,17 +56,21 @@ public class Family extends Human {
     }
 
     public void addChild(Human child){
-        ArrayList<Human> children = new ArrayList<>();
-        children.add(child);
+        this.children.add(child);
     }
-    public void deleteChild(int indexOfChild){
-        children.remove(indexOfChild);
+    public void deleteChild(int indexOfchild){
+        children.remove(indexOfchild);
     }
-    public int countFamily(){
-        ArrayList<Human> children = new ArrayList<>();
-        int count= children.size();
-        int famSize=2+count;
-        return famSize;
+    public void countFamily(){
+        int count= this.children.size();
+        System.out.println("The amount of family members: "+ (count+2));  //  (+2) for mother and father
+    }
+    @Override
+    public boolean equals(Object x){
+        if(this ==x) return true;
+        if(!(x instanceof Human)) return false;
+        Human that = (Human) x;
+        return this.getName().equals(that.getName()) && this.getSchedule().equals(that.getSchedule());
     }
     public Family(){}
 
