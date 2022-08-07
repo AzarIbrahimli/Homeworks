@@ -7,10 +7,15 @@ public class Main {
         Pet pet = new Pet("cat","Mastan", 2, 20, new String[]{"eat,drink,sleep"});
         Human mother = new Human("Jane","Karleone",1956,95,new String[][]{{"Monday, study"}});
         Human father = new Human("Vito","Karleone",1955,90,new String[][]{{"Monday, go to cinema"}});
+        Human mom = new Human("Vito","Karlee",1955,90,new String[][]{{"Monday, go to cinema"}});
         Human child1 = new Human("Victor","Karleone",1980,99, new String[][]{{"Tuesday, play"}});
-        Human child2= new Human("James","Karleone",1977,95,new String[][]{{"Thursday, sing"}});
+        Human child2= new Human("James","Karleone",1977,95,new String[][]{{"Thursday, sing"}});  //second family
+        Human mother2 = new Human("Jane","Karleone",1956,95,new String[][]{{"Monday, study"}});  //second family
+        Human father2 = new Human("Vito","Karleone",1955,90,new String[][]{{"Monday, go to cinema"}}); //second family
+        Pet pet2 = new Pet("cat","Mastan", 2, 20, new String[]{"eat,drink,sleep"});
 
         Family family = new Family(father,mother,pet);
+        Family family2 = new Family(father2,mother2,pet2);
         System.out.println(family);  //without child
         family.addChild((child1));
         System.out.println(family);  //With single child
@@ -21,7 +26,7 @@ public class Main {
         family.deleteChild(1);     //deleteChild method
         System.out.println(family);          //after delete a child
         family.countFamily();
-        System.out.println(father.equals(mother));
+        System.out.println(pet.equals(pet2));
 
 
 

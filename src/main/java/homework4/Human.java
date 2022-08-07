@@ -20,6 +20,7 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", year=" + dateOfBirth +
                 ", iq=" + iqLevel +
+                ", schedule=" +   Arrays.deepToString(schedule)+
                 ", mother=" + mother.name + " " + mother.surname +
                 ", father=" + father.name + " " + father.surname +
                 ", pet=" + pet +
@@ -53,13 +54,14 @@ public class Human {
         this.mother = mother;
     }
 
-    public Human(String humanName, String humanSurname, int humanBirth, Human father, Human mother, int humanIq, Pet pet) {
+    public Human(String humanName, String humanSurname, int humanBirth,int humanIq,String [][] schedule, Human father, Human mother, Pet pet) {
         this.name = humanName;
         this.surname = humanSurname;
         this.dateOfBirth = humanBirth;
         this.father = father;
         this.mother = mother;
         this.iqLevel = humanIq;
+        this.schedule=schedule;
         this.pet = pet;
     }
 

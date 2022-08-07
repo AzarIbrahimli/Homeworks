@@ -8,7 +8,7 @@ public class Main {
 
         Human father = new Human("Ilgar","Ibrahimli",1964);
         Human mother = new Human("Nigar","Ibrahimli",1968);
-        Human child = new Human("Vugar","Ibrahimli",1998,father,mother,96, pet);
+        Human child = new Human("Vugar","Ibrahimli",1998,95, new String[][]{{"Monday,paint"}},father,mother, pet);
         child.describePet();
         child.greetPet();
         pet.respond();

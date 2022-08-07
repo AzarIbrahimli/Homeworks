@@ -67,10 +67,10 @@ public class Family extends Human {
     }
     @Override
     public boolean equals(Object x){
-        if(this ==x) return true;
-        if(!(x instanceof Human)) return false;
-        Human that = (Human) x;
-        return this.getName().equals(that.getName()) && this.getSchedule().equals(that.getSchedule());
+        if(this == x) return true;
+        if(!(x instanceof Family)) return false;
+        Family that = (Family) x;
+        return this.pet.getHabits().equals(that.pet.getHabits());
     }
     public Family(){}
 
