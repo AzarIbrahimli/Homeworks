@@ -55,6 +55,9 @@ import java.util.List;
             this.pet = pet;
 
         }
+//        protected void finalize(){
+//            System.out.println("Object is removing");
+//        }
 
         public void addChild(Human child){
             this.children.add(child);

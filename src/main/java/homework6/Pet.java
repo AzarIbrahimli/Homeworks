@@ -1,13 +1,20 @@
 package homework6;
 import java.util.Arrays;
+enum Species {
+    Cat,
+    Dog,
+    Rabbit,
+    Bird
+
+}
 public class Pet {
-    private String species;
+    private Species species;
     private String nickname;
     private int age;
     private int trickLevel;
     private String[] habits;
 
-    public String getSpecies() {
+    public Species getSpecies() {
         return species;
     }
 
@@ -43,7 +50,7 @@ public class Pet {
         this.nickname = nickname;
     }
 
-    public void setSpecies(String species) {
+    public void setSpecies(Species species) {
         this.species = species;
     }
 
@@ -70,18 +77,22 @@ public class Pet {
     }
 
 
-    public Pet(String species, String nickname) {
+    public Pet(Species species, String nickname) {
         this.species = species;
         this.nickname = nickname;
     }
 
-    public Pet(String species, String nickname, int age, int tricklevel, String[] habits) {
+    public Pet(Species species, String nickname, int age, int tricklevel, String[] habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = tricklevel;
         this.habits = habits;
     }
+//    @Override
+//    protected void finalize(){
+//        System.out.println("Object is removing");
+//    }
 
 
     public Pet() {

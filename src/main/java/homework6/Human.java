@@ -1,5 +1,15 @@
 package homework6;
 import java.util.Arrays;
+
+enum DayofWeek{
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
 public class Human {
     private String name;
     private String surname;
@@ -7,6 +17,32 @@ public class Human {
     private int iqLevel;
     private String[][] schedule;
 
+    public static String name(DayofWeek dayofWeek){
+        switch (dayofWeek){
+            case Monday -> {
+                return "Monday";
+            }
+            case Tuesday -> {
+                return "Tuesday";
+            }
+            case Wednesday -> {
+                return"Wednesday";
+            }
+            case Thursday -> {
+                return"Thursday";
+            }
+            case Friday -> {
+                return"Friday";
+            }
+            case Saturday -> {
+                return"Saturday";
+            }
+            case Sunday -> {
+                return"Sunday";
+            }
+        }
+        return "";
+    }
 
     /** getters */
     public String getName() {
@@ -89,6 +125,10 @@ public class Human {
         this.iqLevel = humanIq;
         this.schedule = schedule;
     }
+//    @Override
+//    protected void finalize(){
+//        System.out.println("Object is removing");
+//    }
 
     public Human() {
     }
