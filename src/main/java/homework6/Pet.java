@@ -1,5 +1,9 @@
 package homework6;
+
+
 import java.util.Arrays;
+import java.util.Objects;
+
 enum Species {
     Cat,
     Dog,
@@ -89,11 +93,19 @@ public class Pet {
         this.trickLevel = tricklevel;
         this.habits = habits;
     }
-//    @Override
-//    protected void finalize(){
-//        System.out.println("Object is removing");
-//    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pet pet = (Pet) o;
+        return age == pet.age && trickLevel == pet.trickLevel && species == pet.species && Objects.equals(nickname, pet.nickname) && Arrays.equals(habits, pet.habits);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 
     public Pet() {
     }

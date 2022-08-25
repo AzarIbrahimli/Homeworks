@@ -1,8 +1,6 @@
 package homework6;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 
     public class Family extends Human {
@@ -47,17 +45,15 @@ import java.util.List;
         }
 
 
-        public Family(Human father, Human mother, Pet pet) {
+        public Family(Human father, Human mother, Pet pet,ArrayList<Human> children) {
             this.father = father;
             this.mother = mother;
-            ArrayList<Human> children = new ArrayList<>();
+//            ArrayList<Human> children = new ArrayList<>();
             this.children = children;
             this.pet = pet;
 
         }
-//        protected void finalize(){
-//            System.out.println("Object is removing");
-//        }
+
 
         public void addChild(Human child){
             this.children.add(child);
@@ -65,17 +61,21 @@ import java.util.List;
         public void deleteChild(int indexOfchild){
             children.remove(indexOfchild);
         }
-        public void countFamily(){
-            int count= this.children.size();
-            System.out.println("The amount of family members: "+ (count+2));  //  (+2) for mother and father
+        public void deleteChild(Human child){
+            children.remove(child);
         }
-        @Override
-        public boolean equals(Object x){
-            if(this == x) return true;
-            if(!(x instanceof Family)) return false;
-            Family that = (Family) x;
-            return this.pet.getHabits().equals(that.pet.getHabits());
+        public int countFamily(){
+            return this.children.size()+2;
+//            System.out.println("The amount of family members: "+ (count+2));  //  (+2) for mother and father
         }
+//        @Override
+//        public boolean equals(Object x){
+//            if(this == x) return true;
+//            if(!(x instanceof Family)) return false;
+//            Family that = (Family) x;
+//            return this.pet.getHabits().equals(that.pet.getHabits());
+//        }
+
         public Family(){}
 
 

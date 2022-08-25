@@ -1,7 +1,8 @@
 package homework6;
+
 import java.util.Arrays;
 
-enum DayofWeek{
+enum DayOfWeek {
     Monday,
     Tuesday,
     Wednesday,
@@ -17,7 +18,7 @@ public class Human {
     private int iqLevel;
     private String[][] schedule;
 
-    public static String name(DayofWeek dayofWeek){
+    public static String name(DayOfWeek dayofWeek){
         switch (dayofWeek){
             case Monday -> {
                 return "Monday";
@@ -118,6 +119,8 @@ public class Human {
     }
 
 
+
+
     public Human(String humanName, String humanSurname, int humanBirth, int humanIq,String[][]schedule) {
         this.name = humanName;
         this.surname = humanSurname;
@@ -125,10 +128,7 @@ public class Human {
         this.iqLevel = humanIq;
         this.schedule = schedule;
     }
-//    @Override
-//    protected void finalize(){
-//        System.out.println("Object is removing");
-//    }
+
 
     public Human() {
     }
