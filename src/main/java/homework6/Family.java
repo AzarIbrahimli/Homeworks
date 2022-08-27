@@ -59,7 +59,12 @@ import java.util.ArrayList;
             this.children.add(child);
         }
         public void deleteChild(int indexOfchild){
-            children.remove(indexOfchild);
+            if(indexOfchild>children.size()){
+                System.out.println(children);
+            }
+            else{
+                children.remove(indexOfchild);
+            }
         }
         public void deleteChild(Human child){
             children.remove(child);
