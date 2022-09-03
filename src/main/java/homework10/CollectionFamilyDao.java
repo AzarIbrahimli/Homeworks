@@ -1,7 +1,5 @@
 package homework10;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,9 +22,9 @@ public class CollectionFamilyDao implements FamilyDao {
     }
 
     @Override
-    public boolean deleteFamily(Family family) {
-
-        return false;
+    public boolean deleteFamily(Family f) {
+        family.remove(f);
+        return true;
     }
 
     @Override

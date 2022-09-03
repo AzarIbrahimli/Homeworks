@@ -22,6 +22,7 @@ public abstract class Human {
     private int iqLevel;
     private Pet pet;
     private Map<DayofWeek,String> schedule;
+    private Family family;
     public static String name(DayofWeek dayofWeek){
         switch (dayofWeek){
             case Monday -> {
@@ -77,9 +78,15 @@ public abstract class Human {
         this.schedule = schedule;
     }
 
+    public Family getFamily() {
+        return family;
+    }
+
     /** getters */
 
-
+    public void setFamily(Family family) {
+        this.family = family;
+    }
     public void setPet(Pet pet) {
         this.pet = pet;
     }
