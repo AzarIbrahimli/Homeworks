@@ -26,7 +26,7 @@ public class FamilyController {
         return service.getFamiliesWithMemberNumber(c);
     }
 
-    public .Family createNewFamily(Human mother, Human father){
+    public Family createNewFamily(Human mother, Human father){
         return service.createNewFamily(mother,father);
     }
 
