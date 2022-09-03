@@ -71,9 +71,8 @@ public class Family  {
     public void deleteChild(int indexOfchild){
         children.remove(indexOfchild);
     }
-    public void countFamily(){
-        int count= this.children.size();
-        System.out.println("The amount of family members: "+ (count+2));  //  (+2) for mother and father
+    public int countFamily(){
+        return  this.children.size()+2; // +2 for mother and father
     }
 //    @Override
 //    public boolean equals(Object x){
