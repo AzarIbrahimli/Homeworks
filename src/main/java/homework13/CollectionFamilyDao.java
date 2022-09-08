@@ -33,12 +33,12 @@ public class CollectionFamilyDao implements FamilyDao {
 
     @Override
     public void save() {
-        saveFamily(family);
+        save();
     }
 
     @Override
     public void load() {
-
+        System.out.println("loading...");
     }
 
 }
