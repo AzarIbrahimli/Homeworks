@@ -74,7 +74,7 @@ public class FamilyService {
         familydao.save();
     }
     public void dataLoad(){
-        familydao.load();
+//        familydao.load();
     }
 
     }
