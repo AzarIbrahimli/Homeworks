@@ -17,19 +17,29 @@ public class CollectionFamilyDao implements FamilyDao {
 
     @Override
     public boolean deleteFamily(int index) {
-        family.remove(family.get(index));
-        return true;
+        if (family.size() > index)  // element is already have
+        {
+            family.remove(family.get(index));
+            return true;
+        }
+        else return false;
     }
 
     @Override
-    public boolean deleteFamily(Family f) {
-        family.remove(f);
-        return true;
+    public boolean deleteFamily(Family fam) {
+        if (fam.equals(family)) {
+            family.remove(fam);
+            return true;
+        }
+        else return false;
     }
 
     @Override
-    public void saveFamily(Family f) {
-        family.add(f);
+    public void saveFamily(Family fam) {
+        if(fam.equals(family)){  // already exist
+            family.set(family.indexOf(fam),fam);
+        }
+        else  family.add(fam);
     }
 
 }
