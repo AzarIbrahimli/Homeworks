@@ -1,65 +1,108 @@
 package homework11;
-import java.util.*;
+
+import homework11.animals.DomesticCat;
+import homework11.animals.Fish;
+import homework11.animals.RoboCat;
+import homework11.gender.Man;
+import homework11.gender.Woman;
+import homework11.model.Family;
+import homework11.model.Human;
+import homework11.model.Pet;
+import homework11.pattern.collection.CollectionFamilyDao;
+import homework11.pattern.controller.FamilyController;
+import homework11.pattern.service.FamilyService;
+
+import java.text.ParseException;
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class Main {
-    public static void main(String[] args) {
-        Set<String> habits = new HashSet<>();
-        habits.add("eat,drink,sleep");
+    public static void main(String[] args) throws ParseException {
+        CollectionFamilyDao collectionFamilyDao = new CollectionFamilyDao();
+        FamilyService familyService = new FamilyService(collectionFamilyDao);
+        FamilyController familyController = new FamilyController(familyService);
+        Set<Pet> mypets = new HashSet<>();
+        Man man = new Man("Azar","Ibrahimli","27/07/1998");
+        Woman woman = new Woman("Nigar","Ibrahimli","27/07/2000");
+        Pet mypet = new RoboCat("RoboCat");
+        Pet myfish = new Fish("Fish");
 
-        Pet pet = new Dog("Toplan",5,1,habits);
-        Map<DayofWeek, String> habitmother = new HashMap<>();
-        habitmother.put(DayofWeek.Monday,"Go to cinema");
-
-        Map<DayofWeek, String> habitfather = new HashMap<>();
-        habitfather.put(DayofWeek.Sunday,"Go to cinema");
-
-        Map<DayofWeek, String> habitmom = new HashMap<>();
-        habitmom.put(DayofWeek.Monday,"Play piano");
-
-        Map<DayofWeek, String> habitchild1 = new HashMap<>();
-        habitchild1.put(DayofWeek.Monday,"Go to cinema");
-
-        Map<DayofWeek, String> habitchild2 = new HashMap<>();
-        habitchild2.put(DayofWeek.Monday,"Go to cinema");
-
-        Map<DayofWeek, String> habitmother2 = new HashMap<>();
-        habitmother2.put(DayofWeek.Monday,"Go to cinema");
-
-        Map<DayofWeek, String> habitfather2 = new HashMap<>();
-        habitfather2.put(DayofWeek.Monday,"Go to cinema");
+        mypets.add(mypet);
+        mypets.add(myfish);
+        Family family = new Family(woman,man,mypets);
 
 
-        Human mother = new Woman("Jane","Karleone",1956,95,habitmother);
-        Human father = new Man("Vito","Karleone",1955,90, habitfather);
-        Human mom = new Woman("Vito","Karlee",1955,90,habitmom);
-        Human child1 = new Man("Victor","Karleone",1980,99, habitchild1);
-        Human child2= new Woman("James","Karleone",1977,95,habitchild2);  //second family
-        Human mother2 = new Woman("Jane","Karleone",1956,95,habitmother2);  //second family
-        Human father2 = new Man("Vito","Karleone",1955,90, habitfather2); //second family
-        Pet pet2 = new Fish("Nemo", 2, 20, habits);
-        Set<Pet> ad = new HashSet<>();
-        ad.add(pet2);
 
-        System.out.println(mother);
-        Family family = new Family(father,mother,ad);
-        Family family2 = new Family(father2,mother2,ad);
-        System.out.println(family);  //without child
-        family.addChild((child1));
-        System.out.println(family);  //With single child
-        family.countFamily();
-        family.addChild((child2));   //with 2 children
-        System.out.println(family);
-        family.countFamily();                 //countFamily method
-        family.deleteChild(1);     //deleteChild method
-        System.out.println(family);          //after delete a child
-        family.countFamily();
-        System.out.println(pet.equals(pet2));
-        mother.greetPet();
-        father.greetPet();
+        Set<Pet> mypets2 = new HashSet<>();
+        Man man2 = new Man("Azar2","Ibrahimli");
+        Woman woman2 = new Woman("Nigar2","Ibrahimli");
+        Man child = new Man("Odar","Ibrahimli","27/07/2007");
+        Man child2 = new Man("Omar","Ibrahimli","27/07/2005");
+        Pet mypet2 = new RoboCat("RoboCat2");
+        Pet myfish2 = new Fish("Fish2");
+        mypets2.add(mypet2);
+        mypets2.add(myfish2);
+        Family family2 = new Family(woman2,man2,mypets2);
+        family2.addChild(child);
+        family2.addChild(child2);
 
-        father.describeAge();  // Indicate human life
+        collectionFamilyDao.saveFamily(family);
+        collectionFamilyDao.saveFamily(family2);
+        System.out.println(collectionFamilyDao.getAllFamilies());
+        System.out.println(child2.describeAge());
+//
+//
+//        System.out.println(collectionFamilyDao.getFamilyByIndex(1));
+//        System.out.println(collectionFamilyDao.deleteFamily(1));
+//        System.out.println(collectionFamilyDao.getAllFamilies());
+//
+//        System.out.println(collectionFamilyDao.deleteFamily(family));
+//        System.out.println(collectionFamilyDao.getAllFamilies());
 
 
+//        familyService.displayAllFamilies();
+//        System.out.println(familyService.getAllFamilies());
+//        System.out.println(familyService.getFamiliesLessThan(5));
+//        System.out.println(familyService.CountFamiliesWithMemberNumber(2));
+
+//        System.out.println(familyService.createNewFamily(new Human("Leyla", "Aliyeva",2001), new Human("Mahammad","Aliyev",1999)));
+//        familyService.displayAllFamilies();
+//        familyService.deleteFamilyByIndex(1);
+//        familyService.displayAllFamilies();
+//        System.out.println(familyService.getAllFamilies());
+
+//        System.out.println("-------------------");
+//        System.out.println(familyService.bornChild(family2,"Reza","Su"));
+//        familyService.displayAllFamilies();
+
+
+//        Human adoptChild = new Woman("Niga","Aliyev","27/07/1999");
+//        familyService.adoptChild(family,adoptChild);
+//        familyService.displayAllFamilies();
+
+//        System.out.println(familyService.count());
+//
+//        System.out.println(familyService.getFamilyById(0));
+//
+//        System.out.println(familyService.getPets(0));
+//        System.out.println(familyService.addPet(0,new DomesticCat("Leo")));
+//        System.out.println(familyService.getPets(0));
+//        System.out.println("\n");
+
+//        System.out.println(familyService.getAllFamilies().get(0).getChildren());
+//        System.out.println(familyService.getAllFamilies().get(1).getChildren());
+//        System.out.println("\n");
+//        System.out.println(familyService.deleteAllChildrenOlderThan(20));
+//        System.out.println(familyService.getAllFamilies().get(0).getChildren());
+//        System.out.println(familyService.getAllFamilies().get(1).getChildren());
+        System.out.println(family.countFamily());
+        System.out.println(family2.countFamily());
+        System.out.println(familyController.countFamiliesWithMemberNumber(1));//0
+        System.out.println(familyController.countFamiliesWithMemberNumber(2));//1
+        System.out.println(familyController.countFamiliesWithMemberNumber(3));//0
+        System.out.println(familyController.countFamiliesWithMemberNumber(4));//1
+
+
+        }
     }
-}
-

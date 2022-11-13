@@ -1,5 +1,7 @@
-package homework11;
+package homework11.pattern.dao;
 
+
+import homework11.model.Family;
 
 import java.util.List;
 
@@ -8,5 +10,5 @@ public interface FamilyDao {
     Family getFamilyByIndex(int index);
     boolean deleteFamily(int index);
     boolean deleteFamily(Family family);
-    void saveFamily(Family f);
+    List<Family> saveFamily(Family family);
 }
