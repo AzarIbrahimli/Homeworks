@@ -1,10 +1,10 @@
 package homework11.test;
 
-import homework10.gender.Man;
-import homework10.gender.Woman;
-import homework10.model.Family;
-import homework10.pattern.collection.CollectionFamilyDao;
-import homework10.pattern.service.FamilyService;
+import homework11.gender.Man;
+import homework11.gender.Woman;
+import homework11.model.Family;
+import homework11.pattern.collection.CollectionFamilyDao;
+import homework11.pattern.service.FamilyService;
 import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
@@ -56,7 +56,7 @@ public class TestFamilyService {
     public void CountFamiliesWithMemberNumber() throws ParseException {
         familyService.createNewFamily(new Woman("Fidan", "Ibrahimli", "27/09/1995"), new Man("Vugar", "Ibrahimli", "27/09/1987"));
         collectionFamilyDao.saveFamily(family);
-        assertEquals(2,familyService.CountFamiliesWithMemberNumber(2));
+        assertEquals(2,familyService.countFamiliesWithMemberNumber(2));
     }
 
     @Test

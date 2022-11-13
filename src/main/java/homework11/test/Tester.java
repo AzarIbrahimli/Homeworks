@@ -1,9 +1,9 @@
 package homework11.test;
 
-import homework10.gender.Man;
-import homework10.gender.Woman;
-import homework10.model.Family;
-import homework10.model.Human;
+import homework11.gender.Man;
+import homework11.gender.Woman;
+import homework11.model.Family;
+import homework11.model.Human;
 import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
