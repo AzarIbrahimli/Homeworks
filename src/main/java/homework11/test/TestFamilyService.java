@@ -53,7 +53,7 @@ public class TestFamilyService {
     }
 
     @Test
-    public void CountFamiliesWithMemberNumber() throws ParseException {
+    public void countFamiliesWithMemberNumber() throws ParseException {
         familyService.createNewFamily(new Woman("Fidan", "Ibrahimli", "27/09/1995"), new Man("Vugar", "Ibrahimli", "27/09/1987"));
         collectionFamilyDao.saveFamily(family);
         assertEquals(2,familyService.countFamiliesWithMemberNumber(2));
