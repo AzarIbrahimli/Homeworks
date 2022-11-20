@@ -24,10 +24,12 @@ public class FamilyService {
     }
 
     public void displayAllFamilies(){
-        getAllFamilies().forEach(x->{
-            int i=0;
-            System.out.printf("%s\n",x);
-        });
+        int[] i = {1};
+        getAllFamilies().stream().forEach(family -> System.out.println(i[0]++ +". " + family));
+//        getAllFamilies().forEach(x->{
+//            int i=0;
+//            System.out.printf("%s\n",x);
+//        });
     }
 
     public List<Family> getFamiliesBiggerThan(int count){
